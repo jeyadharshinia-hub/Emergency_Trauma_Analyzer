@@ -1,0 +1,25 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.eta-app {
+  background: rgba(255, 255, 255, 0.2);
+  min-height: 100vh;
+}
+
+.eta-main {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.eta-main::after {
+  content: '';
+  position: absolute;
+  inset: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 30px;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(242, 248, 255, 0.85));
+}

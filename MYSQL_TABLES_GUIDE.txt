@@ -1,0 +1,38 @@
+MySQL Table Visibility Guide
+============================
+
+This project does not require importing a separate SQL dump file.
+
+How the database is connected:
+- The backend reads the connection string from `.env`.
+- Default MySQL example:
+  DATABASE_URL=mysql+pymysql://root:root@127.0.0.1:3306/eta_db
+- The connection is configured in `backend/config.py`.
+- The app loads `.env` in `backend/app.py`.
+
+How tables are created:
+- When the backend starts, Flask-SQLAlchemy runs `db.create_all()`.
+- That automatically creates the project tables in the database from the model files.
+- Main models include users, patients, scans, reports, and scan_patient_link.
+
+What you need to do in MySQL:
+1. Make sure MySQL server is running.
+2. Create the database once if it does not exist:
+   CREATE DATABASE eta_db;
+3. Keep the correct MySQL URL in `.env`.
+4. Start the backend:
+   cd backend
+   python app.py
+5. Then check tables in MySQL:
+   USE eta_db;
+   SHOW TABLES;
+
+If you still cannot see tables:
+- Verify `.env` is not pointing to SQLite.
+- Restart the backend after changing `.env`.
+- Check that username, password, host, port, and database name are correct.
+- If needed, delete any old local SQLite dev file and start the backend again so it connects to MySQL.
+
+Important:
+- No manual SQL import file is required for normal setup.
+- The backend creates the tables automatically from the Python models..

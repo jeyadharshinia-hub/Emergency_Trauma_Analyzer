@@ -1,0 +1,48 @@
+ETA Delivery Checklist
+======================
+
+Change request coverage
+-----------------------
+1. Admin role added.
+   - Separate admin login flow is available.
+   - Admin is routed to the admin dashboard.
+   - Doctor is routed to the doctor dashboard.
+
+2. Admin capabilities added.
+   - Create and delete doctor accounts.
+   - View all uploaded reports.
+   - View all patient records.
+   - Monitor recent system activity.
+   - Download doctor-generated reports from the admin dashboard.
+
+3. Report download naming updated.
+   - PDF filename now includes patient name and report date.
+   - Format example: eta_report_Patient_Name_2026-04-06.pdf
+
+4. Database guidance prepared.
+   - See MYSQL_TABLES_GUIDE.txt
+   - Explains .env connection, MySQL setup, and auto table creation.
+
+PPT alignment notes
+-------------------
+1. Core ETA scope matches the presentation.
+   - Trauma scan upload flow
+   - AI-assisted screening
+   - Severity output
+   - Doctor-oriented workflow
+   - MySQL-based backend support
+
+2. Admin role is an added client enhancement.
+   - The PPT focuses on ETA diagnosis workflow and technology stack.
+   - Admin management features are extra client delivery requirements layered on top of the project.
+
+Validation completed
+--------------------
+1. Backend test suite passed.
+   - Command: python -m unittest backend.tests.test_analysis_flow
+
+2. Frontend production build passed.
+   - Command: npm run build
+
+3. Delivery archive refreshed.
+   - frontend-dist.zip recreated from frontend/dist

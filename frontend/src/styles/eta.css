@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap');
+
+:root {
+  --eta-primary: #1670f9;
+  --eta-primary-strong: #0f5dd1;
+  --eta-navbar: #e5f2fb;
+  --eta-bg: #f6f9fc;
+  --eta-card: #ffffff;
+  --eta-success: #198754;
+  --eta-border: #e5e7eb;
+  --eta-text: #1f2937;
+  --eta-muted: #6b7280;
+  --eta-critical: #dc3545;
+  --eta-moderate: #fd7e14;
+  --eta-mild: #198754;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--eta-text);
+  font-family: 'Manrope', sans-serif;
+  background:
+    radial-gradient(circle at 5% 10%, rgba(22, 112, 249, 0.12), transparent 35%),
+    radial-gradient(circle at 90% 0%, rgba(45, 196, 255, 0.16), transparent 38%),
+    linear-gradient(180deg, #edf6ff 0%, var(--eta-bg) 55%);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.eta-app {
+  min-height: 100vh;
+}
+
+.eta-main {
+  position: relative;
+}
+
+.eta-navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  background: linear-gradient(90deg, rgba(229, 242, 251, 0.9) 0%, rgba(241, 249, 255, 0.95) 100%);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.eta-brand-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.eta-brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--eta-primary) 0%, #2f8dff 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  box-shadow: 0 10px 20px rgba(22, 112, 249, 0.25);
+}
+
+.eta-navlink {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.eta-navlink:hover,
+.eta-navlink.active {
+  background: rgba(22, 112, 249, 0.12);
+  color: var(--eta-primary-strong);
+}
+
+.eta-card {
+  border: 1px solid var(--eta-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  background: var(--eta-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eta-card-soft {
+  border: 1px solid var(--eta-border);
+  border-radius: 14px;
+  background: #fcfdff;
+}
+
+.eta-admin-hero {
+  padding: 1.6rem;
+}
+
+.eta-admin-hero-note {
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid #d7e5fb;
+  background: rgba(255, 255, 255, 0.8);
+  color: #32506f;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.eta-admin-stat {
+  background:
+    radial-gradient(circle at top, rgba(34, 120, 255, 0.08), transparent 42%),
+    #fff;
+}
+
+.eta-admin-surface {
+  overflow: hidden;
+}
+
+.eta-admin-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.eta-admin-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  min-height: 52px;
+  background: transparent;
+  color: #50627f;
+  font-weight: 800;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eta-admin-tab.active {
+  background: linear-gradient(135deg, #0f5dd1 0%, #1f7bff 100%);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(15, 93, 209, 0.2);
+}
+
+.eta-admin-form {
+  padding: 1rem;
+  border: 1px solid #dce7f7;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f4f8ff 100%);
+}
+
+.eta-admin-empty {
+  padding: 1rem;
+  border: 1px dashed #cfe0f7;
+  border-radius: 14px;
+  background: #f8fbff;
+  color: #64748b;
+}
+
+.eta-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09);
+}
+
+.eta-hero {
+  border: 1px solid rgba(197, 220, 243, 0.9);
+  border-radius: 18px;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(54, 132, 249, 0.18), transparent 35%),
+    linear-gradient(135deg, #ffffff 0%, #f1f7ff 100%);
+  animation: eta-rise 0.45s ease;
+}
+
+.eta-subtle {
+  color: var(--eta-muted);
+}
+
+.eta-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.eta-chip {
+  font-size: 0.77rem;
+  font-weight: 700;
+  color: #0f3768;
+  background: #dfefff;
+  border: 1px solid #c4ddff;
+  border-radius: 999px;
+  padding: 0.32rem 0.68rem;
+}
+
+.eta-feature {
+  position: relative;
+  overflow: hidden;
+}
+
+.eta-feature::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--eta-primary), #62b2ff);
+}
+
+.eta-icon-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(140deg, #e9f3ff, #d9ebff);
+  color: #114d9a;
+  font-size: 1.4rem;
+}
+
+.eta-donut {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eta-donut-inner {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--eta-primary);
+  box-shadow: inset 0 0 0 1px #dbeafe;
+}
+
+.eta-severity {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.eta-severity-critical {
+  background: #fde5e8;
+  color: #a11229;
+}
+
+.eta-severity-moderate {
+  background: #fff1df;
+  color: #a04b00;
+}
+
+.eta-severity-mild {
+  background: #e3f6eb;
+  color: #0f6a3e;
+}
+
+.eta-severity-unknown {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.eta-login-layout {
+  min-height: calc(100vh - 140px);
+  align-items: center;
+}
+
+.eta-login-panel {
+  border-radius: 18px;
+  border: 1px solid #d9e8fb;
+  background:
+    radial-gradient(circle at 15% 5%, rgba(22, 112, 249, 0.3), transparent 36%),
+    linear-gradient(145deg, #0f5dd1, #1670f9);
+  color: #fff;
+  padding: 2rem;
+  box-shadow: 0 22px 36px rgba(17, 88, 190, 0.32);
+}
+
+.eta-login-card {
+  padding: 1.4rem;
+}
+
+.eta-role-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f3f8ff 0%, #e8f0ff 100%);
+  border: 1px solid #d7e5fb;
+}
+
+.eta-role-switch__item {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  background: transparent;
+  color: #4b5c78;
+  font-size: 0.92rem;
+  font-weight: 800;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eta-role-switch__item.active {
+  background: linear-gradient(135deg, #0f5dd1 0%, #1f7bff 100%);
+  color: #fff;
+  box-shadow: 0 14px 24px rgba(15, 93, 209, 0.24);
+}
+
+.eta-role-switch__item:hover {
+  transform: translateY(-1px);
+}
+
+.eta-tab-strip {
+  display: inline-flex;
+  border: 1px solid #d8e6f8;
+  border-radius: 999px;
+  padding: 0.2rem;
+  gap: 0.2rem;
+}
+
+.eta-tab-chip {
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.32rem 0.75rem;
+  background: transparent;
+  color: #5b667a;
+}
+
+.eta-tab-chip.active {
+  background: #deebff;
+  color: #114d9a;
+}
+
+.eta-tab-chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.eta-upload-drop {
+  border: 1.5px dashed #b8d5fb;
+  border-radius: 14px;
+  background: #f8fbff;
+  padding: 0.85rem;
+}
+
+.eta-preview-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+}
+
+.eta-result-image {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+}
+
+.eta-file-name {
+  max-width: 100%;
+  font-size: 0.9rem;
+  color: #475569;
+  word-break: break-all;
+}
+
+.eta-sticky {
+  position: sticky;
+  top: 94px;
+}
+
+.eta-section-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #475569;
+  font-weight: 800;
+  margin-bottom: 0.55rem;
+}
+
+.eta-checklist {
+  border-radius: 12px;
+  border: 1px solid #dfe7f3;
+  overflow: hidden;
+}
+
+.eta-check-item {
+  background: #f9fbff;
+  border-bottom: 1px solid #e8eef8;
+  padding: 0.58rem 0.75rem;
+}
+
+.eta-check-item:last-child {
+  border-bottom: none;
+}
+
+.eta-fade {
+  animation: eta-rise 0.42s ease;
+}
+
+@keyframes eta-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: var(--eta-primary);
+  border-color: var(--eta-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--eta-primary-strong);
+  border-color: var(--eta-primary-strong);
+}
+
+.btn-outline-primary {
+  color: var(--eta-primary);
+  border-color: var(--eta-primary);
+}
+
+.btn-success {
+  background-color: var(--eta-success);
+  border-color: var(--eta-success);
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border-color: #cfdae8;
+  padding: 0.62rem 0.72rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(22, 112, 249, 0.15);
+  border-color: #90bbf9;
+}
+
+@media (max-width: 991px) {
+  .eta-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .eta-admin-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .eta-navbar .container {
+    row-gap: 0.65rem;
+  }
+
+  .eta-login-panel {
+    margin-bottom: 1rem;
+  }
+
+  .eta-donut {
+    width: 128px;
+    height: 128px;
+  }
+
+  .eta-donut-inner {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+.eta-patient-logs-backdrop {
+  z-index: 1055;
+}
+
+.eta-patient-logs-modal {
+  z-index: 1065;
+}
+
+.eta-create-patient-backdrop {
+  z-index: 1055;
+}
+
+.eta-create-patient-modal {
+  z-index: 1065;
+}
